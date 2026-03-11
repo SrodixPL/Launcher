@@ -20,6 +20,7 @@ namespace Core
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
             _viteProcess = new Process
             {
                 StartInfo = new ProcessStartInfo
@@ -33,6 +34,7 @@ namespace Core
             };
 
             _viteProcess.Start();
+            new MainWindow().Show();
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -42,15 +44,21 @@ namespace Core
             base.OnExit(e);
         }
 #else
-        private FileServer? _fileServer;
+        private FileServer _fileServer;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            System.Windows.Media.Animation.Timeline.DesiredFrameRateProperty.OverrideMetadata(
+                typeof(System.Windows.Media.Animation.Timeline),
+                new FrameworkPropertyMetadata(144)
+            );
+
             // Serve dist folder over HTTP
             var distPath = System.IO.Path.GetFullPath(@"..\..\..\Client\dist");
-            _fileServer = new FileServer(distPath, 5173);
+            _fileServer = new FileServer(distPath, 21337);
             _fileServer.Start();
+            new MainWindow().Show();
         }
 
         protected override void OnExit(ExitEventArgs e)

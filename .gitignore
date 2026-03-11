@@ -2,6 +2,7 @@
 Core/bin
 Core/obj
 Client/node_modules
+Client/dist
 
 # Logs
 *.log

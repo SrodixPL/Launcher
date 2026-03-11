@@ -1,11 +1,14 @@
-interface CefSharp {
-    BindObjectAsync(...names: string[]): Promise<void>;
-}
-
-interface JsBridge {
+interface JSBridge {
     ping(): Promise<string>;
     showMessage(message: string): Promise<void>;
 }
 
-declare const CefSharp: CefSharp;
-declare const jsBridge: JsBridge;
+interface Chrome {
+    webview: {
+        hostObjects: {
+            jsBridge: JSBridge;
+        }
+    }
+}
+
+declare const chrome: Chrome;

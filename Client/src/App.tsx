@@ -1,42 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react'
+import LoadingScreen from './components/LoadingScreen'
+import WelcomeScreen from './components/WelcomeScreen'
 
 function App() {
-  const [result, setResult] = useState<string>("Click to test bridge")
+    const [appReady, setAppReady] = useState(false)
+    const [animDone, setAnimDone] = useState(false)
+    const [closing, setClosing] = useState(false)
+    const [visible, setVisible] = useState(true)
 
-  async function testBridge() {
-    await CefSharp.BindObjectAsync("jsBridge");
-    const response = await jsBridge.ping();
-    setResult(response);
-    await jsBridge.showMessage("I like pp");
-  }
+    useEffect(() => {
+        async function init() {
+            // await CefSharp.BindObjectAsync("jsBridge")
+            setAppReady(true)
+        }
+        init()
+    }, [])
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={testBridge}>
-          {result}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    useEffect(() => {
+        if (appReady && animDone) {
+            setTimeout(() => setClosing(true), 500)
+        }
+    }, [appReady, animDone])
+
+    return visible
+        ? <LoadingScreen
+            closing={closing}
+            onAnimationDone={() => setAnimDone(true)}
+            onCloseDone={() => setTimeout(() => setVisible(false), 500)}
+          />
+        : <WelcomeScreen />
 }
 
 export default App

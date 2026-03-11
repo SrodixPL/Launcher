@@ -1,9 +1,9 @@
-﻿using CefSharp.Wpf.Experimental.Accessibility;
-using System.IO;
+﻿using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Core
 {
@@ -12,12 +12,23 @@ namespace Core
         public MainWindow()
         {
             InitializeComponent();
+            RenderOptions.SetBitmapScalingMode(this, BitmapScalingMode.NearestNeighbor);
+            RenderOptions.SetEdgeMode(this, EdgeMode.Aliased);
+
             Loaded += async (s, e) =>
             {
+                await Browser.EnsureCoreWebView2Async();
+                Browser.CoreWebView2.AddHostObjectToScript("jsBridge", new Bridge.JSBridge());
+
                 await AwaitVite();
             };
-            Browser.JavascriptObjectRepository.Register("jsBridge", new Bridge.JSBridge(), isAsync: true);
         }
+
+#if DEBUG 
+        private int port = 5173;
+#else 
+        private int port = 21337;
+#endif
 
         private async Task AwaitVite()
         {
@@ -26,7 +37,7 @@ namespace Core
             {
                 try
                 {
-                    await http.GetAsync("http://localhost:5173");
+                    await http.GetAsync($"http://localhost:{port}");
                     break;
                 }
                 catch
@@ -34,7 +45,7 @@ namespace Core
                     await Task.Delay(100);
                 }
             }
-            Browser.Address = "http://localhost:5173";
+            Browser.Source = new System.Uri($"http://localhost:{port}");
         }
 
         private void Window_StateChanged(object sender, System.EventArgs e)
