@@ -119,7 +119,6 @@
         </Grid>
         <wpf:ChromiumWebBrowser
             x:Name="Browser"
-            Grid.Row="1"
-            Address="http://localhost:5173"/>
+            Grid.Row="1"/>
     </Grid>
 </Window>
