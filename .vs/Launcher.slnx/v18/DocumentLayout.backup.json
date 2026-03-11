@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\sroda\\Desktop\\Launcher\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{240E93F2-FDDD-4F46-9FBA-32F68B467F36}|Core\\Core.csproj|c:\\users\\sroda\\desktop\\launcher\\core\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{240E93F2-FDDD-4F46-9FBA-32F68B467F36}|Core\\Core.csproj|solutionrelative:core\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1D43DFEF-784C-40BD-89A2-56E886F46E3F}|Core\\Core.csproj|C:\\Users\\sroda\\Desktop\\Launcher\\core\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D43DFEF-784C-40BD-89A2-56E886F46E3F}|Core\\Core.csproj|solutionrelative:core\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{240E93F2-FDDD-4F46-9FBA-32F68B467F36}|Core\\Core.csproj|c:\\users\\sroda\\desktop\\launcher\\core\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{240E93F2-FDDD-4F46-9FBA-32F68B467F36}|Core\\Core.csproj|solutionrelative:core\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D43DFEF-784C-40BD-89A2-56E886F46E3F}|Core\\Core.csproj|c:\\users\\sroda\\desktop\\launcher\\core\\bridge\\jsbridge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D43DFEF-784C-40BD-89A2-56E886F46E3F}|Core\\Core.csproj|solutionrelative:core\\bridge\\jsbridge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\sroda\\Desktop\\Launcher\\Core\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Core\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\sroda\\Desktop\\Launcher\\Core\\MainWindow.xaml",
-              "RelativeToolTip": "Core\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-09T00:19:45.696Z",
+              "DocumentIndex": 1,
+              "Title": "JSBridge.cs",
+              "DocumentMoniker": "C:\\Users\\sroda\\Desktop\\Launcher\\Core\\Bridge\\JSBridge.cs",
+              "RelativeDocumentMoniker": "Core\\Bridge\\JSBridge.cs",
+              "ToolTip": "C:\\Users\\sroda\\Desktop\\Launcher\\Core\\Bridge\\JSBridge.cs",
+              "RelativeToolTip": "Core\\Bridge\\JSBridge.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T23:45:44.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\sroda\\Desktop\\Launcher\\Core\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Core\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\sroda\\Desktop\\Launcher\\Core\\MainWindow.xaml.cs",
               "RelativeToolTip": "Core\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T00:19:43.48Z",
+              "WhenOpened": "2026-03-10T22:15:49.208Z",
               "EditorCaption": ""
             }
           ]

@@ -1,0 +1,21 @@
+# Build output
+Core/bin
+Core/obj
+Client/node_modules
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env files
+.env
+.env.local
+
+# IDE files
+.vs/
+*.user
+*.suo
+.idea/
+
+# packages folder for storage space purposes
+/packages

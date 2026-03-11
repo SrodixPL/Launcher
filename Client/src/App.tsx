@@ -4,7 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [result, setResult] = useState<string>("Click to test bridge")
+
+  async function testBridge() {
+    await CefSharp.BindObjectAsync("jsBridge");
+    const response = await jsBridge.ping();
+    setResult(response);
+    await jsBridge.showMessage("I like pp");
+  }
 
   return (
     <>
@@ -18,8 +25,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={testBridge}>
+          {result}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR

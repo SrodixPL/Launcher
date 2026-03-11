@@ -1,13 +1,6 @@
-﻿using System.Text;
+﻿using CefSharp.Wpf.Experimental.Accessibility;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Core
 {
@@ -16,13 +9,32 @@ namespace Core
         public MainWindow()
         {
             InitializeComponent();
-            InitAsync();
+            Browser.JavascriptObjectRepository.Register("jsBridge", new Bridge.JSBridge(), isAsync: true);
         }
 
-        async void InitAsync()
+        private void Window_StateChanged(object sender, System.EventArgs e)
         {
-            await webView.EnsureCoreWebView2Async();
-            webView.Source = new Uri("http://localhost:5173");
+            // Compensate for WPF overflow when maximized
+            RootGrid.Margin = WindowState == WindowState.Maximized
+                ? new Thickness(6)
+                : new Thickness(0);
+
+            btnMaxMin.Content = WindowState == WindowState.Maximized
+                ? "\U0001F5D7"
+                : "\U0001F5D6";
         }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+            => WindowState = WindowState.Minimized;
+
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState == WindowState.Maximized
+                ? WindowState.Normal
+                : WindowState.Maximized;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+            => Close();
     }
 }
