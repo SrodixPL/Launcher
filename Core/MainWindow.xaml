@@ -78,22 +78,10 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
                 <!-- Replace Source with your logo path later -->
-                <Border
-                    Width="20" Height="20"
-                    CornerRadius="4"
-                    Background="#393552"
-                    Margin="0,0,8,0">
-                    <TextBlock
-                        Text="L"
-                        Foreground="#e0def4"
-                        FontFamily="Segoe UI"
-                        FontSize="11"
-                        FontWeight="Bold"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"/>
-                </Border>
+                <Image Width="20" Height="20" Margin="0,0,8,0" Source="/ThalliumCatalystLogo.ico" Stretch="Fill"/>
+
                 <TextBlock
-                    Text="Launcher"
+                    Text="ThalliumCatalyst"
                     VerticalAlignment="Center"
                     FontFamily="Segoe UI"
                     FontSize="16"
